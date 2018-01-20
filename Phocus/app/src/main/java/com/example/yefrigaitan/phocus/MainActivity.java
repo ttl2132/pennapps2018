@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -55,7 +56,8 @@ public class MainActivity extends AppCompatActivity {
                         time += progress * 60;
                     }
 
-                    public void onStartTrackingTouch(SeekBar seekBar) {}
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+                    }
 
 
         //minute seekbar
@@ -66,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
                     public void onStopTrackingTouch(SeekBar seekBar) {}
                 }
-        );
+                    );
 
 
         minuteBar.setOnSeekBarChangeListener(
