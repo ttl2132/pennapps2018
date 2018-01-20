@@ -47,7 +47,7 @@
         tools:text="@string/hours" />
 
     <SeekBar
-        android:id="@+id/seekBar"
+        android:id="@+id/seekBarHour"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView"
@@ -56,7 +56,7 @@
         android:layout_marginTop="37dp" />
 
     <SeekBar
-        android:id="@+id/seekBar2"
+        android:id="@+id/seekBarMinute"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView2"
@@ -68,7 +68,7 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/seekBar"
+        android:layout_above="@+id/seekBarHour"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:text="@string/zero"

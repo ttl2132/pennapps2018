@@ -20,6 +20,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:background="@android:drawable/ic_menu_revert"
+        android:onClick="goToHome"
         android:textSize="24sp" />
 
     <Button
@@ -52,7 +53,7 @@
         android:layout_marginTop="47dp"
         android:layout_toEndOf="@+id/back_botton"
         android:layout_toRightOf="@+id/back_botton"
-        app:srcCompat="@drawable/streakIcon" />
+        app:srcCompat="@drawable/streakicon" />
 
     <TextView
         android:id="@+id/streak"
