@@ -20,4 +20,9 @@ public class SuccessActivity extends AppCompatActivity {
         setContentView(R.layout.success);
     }
 
+    public void goToHome (View view){
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
+    }
+
 }
