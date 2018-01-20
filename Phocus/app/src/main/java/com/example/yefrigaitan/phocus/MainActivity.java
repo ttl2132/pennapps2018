@@ -3,16 +3,27 @@ package com.example.yefrigaitan.phocus;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.SeekBar;
-import android.widget.Toast;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
     public static int minute,hour;
+
+    private static SeekBar hourBar;
+    private static SeekBar minuteBar;
+    private static TextView showHour;
+    private static TextView showMinute;
+    public static int time;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.phocus_main);
+        setContentView(R.layout.phocus_setup);
+        setSeekBar();
+    }
 
         // hour seekbar
         SeekBar seekBarHour = (SeekBar) findViewById(R.id.seekBarHour);
@@ -20,19 +31,26 @@ public class MainActivity extends AppCompatActivity {
         seekBarHour.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             hour = 0;
 
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                hour = progress;
-            }
+    public void setSeekBar() {
+        hourBar = (SeekBar)findViewById(R.id.seekBarHour);
+        minuteBar = (SeekBar) findViewById(R.id.seekBarMinute) ;
+        showHour = (TextView)findViewById(R.id.showTextHours);
+        showMinute = (TextView)findViewById(R.id.showTextMinutes);
+        hourBar.setMax(8); // set max hours to 8
+        minuteBar.setMax(59); // set max minutes to 59
 
-            public void onStartTrackingTouch(SeekBar seekBar) {
-                // TODO Auto-generated method stub
-            }
 
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                Toast.makeText(MainActivity.this, "Hours :" + hour,
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
+
+        hourBar.setOnSeekBarChangeListener(
+                new SeekBar.OnSeekBarChangeListener() {
+                    @Override
+                    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                        showHour.setText(" " + progress);
+                        time += progress * 60;
+                    }
+
+                    public void onStartTrackingTouch(SeekBar seekBar) {}
+
 
         //minute seekbar
         SeekBar seekBarMinute = (SeekBar) findViewById(R.id.seekBarMinute);
@@ -40,19 +58,24 @@ public class MainActivity extends AppCompatActivity {
         seekBarHour.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             minute = 0;
 
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                minute = progress;
-            }
+                    public void onStopTrackingTouch(SeekBar seekBar) {}
+                }
+        );
 
-            public void onStartTrackingTouch(SeekBar seekBar) {
-                // TODO Auto-generated method stub
-            }
 
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                Toast.makeText(MainActivity.this, "Minutes :" + minute,
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
+        minuteBar.setOnSeekBarChangeListener(
+                new SeekBar.OnSeekBarChangeListener() {
+                    @Override
+                    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                        time += progress;
+                        showMinute.setText(" " + progress);
+                    }
+
+                    public void onStartTrackingTouch(SeekBar seekBar) {}
+
+                    public void onStopTrackingTouch(SeekBar seekBar) {}
+                }
+        );
 
     }
 
@@ -61,10 +84,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void goToHome (View view){
         Intent intent = new Intent(this,MainActivity.class);
+
+    public void goToHome (View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+
         startActivity(intent);
     }
-
-
 
 }
 
