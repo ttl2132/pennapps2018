@@ -10,6 +10,9 @@ import android.widget.TextView;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static int minute,hour;
+
     private static SeekBar hourBar;
     private static SeekBar minuteBar;
     private static TextView showHour;
@@ -32,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         minuteBar.setMax(59); // set max minutes to 59
 
 
+
         hourBar.setOnSeekBarChangeListener(
                 new SeekBar.OnSeekBarChangeListener() {
                     @Override
@@ -40,11 +44,12 @@ public class MainActivity extends AppCompatActivity {
                         time += progress * 60;
                     }
 
-                    public void onStartTrackingTouch(SeekBar seekBar) {}
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+                    }
 
                     public void onStopTrackingTouch(SeekBar seekBar) {}
                 }
-        );
+                    );
 
         minuteBar.setOnSeekBarChangeListener(
                 new SeekBar.OnSeekBarChangeListener() {
@@ -64,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void goToHome (View view) {
         Intent intent = new Intent(this, MainActivity.class);
+
         startActivity(intent);
     }
 
