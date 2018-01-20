@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Phocus</string>
+    <string name="success">Success!</string>
+    <string name="streak">Streak</string>
 </resources>
