@@ -18,6 +18,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="36dp"
+        android:onClick="startMain"
         android:text="@string/start_button"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -30,7 +31,7 @@
         android:layout_alignStart="@+id/textView2"
         android:layout_below="@+id/textView2"
         android:layout_marginTop="112dp"
-        android:text="TextView"
+        android:text="@string/minutes"
         android:textSize="30sp"
         tools:text="@string/minutes" />
 
@@ -42,7 +43,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/button"
         android:layout_marginTop="53dp"
-        android:text="TextView"
+        android:text="@string/hours"
         android:textSize="30sp"
         tools:text="@string/hours" />
 
