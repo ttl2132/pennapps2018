@@ -8,7 +8,7 @@ import android.widget.SeekBar;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
+    public static int minute,hour;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         SeekBar seekBarHour = (SeekBar) findViewById(R.id.seekBarHour);
         seekBarHour.setMax(8); // 8 is maximum value for the Seek Bar
         seekBarHour.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            int hour = 0;
+            hour = 0;
 
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 hour = progress;
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         SeekBar seekBarMinute = (SeekBar) findViewById(R.id.seekBarMinute);
         seekBarHour.setMax(60); // 60 is maximum value for the Seek Bar
         seekBarHour.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            int minute = 0;
+            minute = 0;
 
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 minute = progress;
@@ -55,6 +55,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+
+
 
     public void goToHome (View view){
         Intent intent = new Intent(this,MainActivity.class);
