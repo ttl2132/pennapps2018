@@ -27,10 +27,9 @@ public class MainActivity extends AppCompatActivity {
     public void startMain (View v){
         Intent intent = new Intent (this, SuccessActivity.class);
         startActivity(intent);
-    }
 
         setSeekBar();
-    }
+
 
         // hour seekbar
         SeekBar seekBarHour = (SeekBar) findViewById(R.id.seekBarHour);
@@ -89,14 +88,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public void goToHome (View view){
-        Intent intent = new Intent(this,MainActivity.class);
 
     public void goToHome (View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-
+        Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
     }
 
-}
-
+        }
