@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:background="@drawable/background">
 
     <Button
         android:id="@+id/button"
@@ -22,12 +22,12 @@
         android:autoSizeMinTextSize="12sp"
         android:autoSizeStepGranularity="2sp"
         android:autoSizeTextType="uniform"
-        android:text="Shame on you!!!"
-        tools:layout_editor_absoluteX="128dp"
-        tools:layout_editor_absoluteY="112dp"
         android:shadowColor="@color/colorAccent"
+        android:text="Shame on you!!!"
         android:textColor="#ff1000"
-        android:textColorHighlight= "#ff8000" />
+        android:textColorHighlight="#ff8000"
+        tools:layout_editor_absoluteX="116dp"
+        tools:layout_editor_absoluteY="376dp" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/SmallFry2_1080p"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="112dp" />
+        tools:layout_editor_absoluteY="0dp" />
 
 
 </android.support.constraint.ConstraintLayout>
