@@ -23,49 +23,49 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/viewMinute"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_below="@+id/textView2"
+        android:layout_alignLeft="@+id/viewHour"
+        android:layout_alignStart="@+id/viewHour"
+        android:layout_below="@+id/viewHour"
         android:layout_marginTop="112dp"
-        android:text="TextView"
+        android:text="@string/minutes"
         android:textSize="30sp"
         tools:text="@string/minutes" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/viewHour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/button"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/button"
         android:layout_marginTop="53dp"
-        android:text="TextView"
+        android:text="@string/hours"
         android:textSize="30sp"
         tools:text="@string/hours" />
-
-    <SeekBar
-        android:id="@+id/seekBarHour"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView"
-        android:layout_alignStart="@+id/textView"
-        android:layout_below="@+id/textView"
-        android:layout_marginTop="37dp" />
 
     <SeekBar
         android:id="@+id/seekBarMinute"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_below="@+id/textView2"
+        android:layout_alignLeft="@+id/viewMinute"
+        android:layout_alignStart="@+id/viewMinute"
+        android:layout_below="@+id/viewMinute"
+        android:layout_marginTop="37dp" />
+
+    <SeekBar
+        android:id="@+id/seekBarHour"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/viewHour"
+        android:layout_alignStart="@+id/viewHour"
+        android:layout_below="@+id/viewHour"
         android:layout_marginTop="25dp" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/showTextHours"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/seekBarHour"
@@ -75,12 +75,13 @@
         android:textSize="30sp" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/showTextMinutes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/viewMinute"
+        android:layout_alignBottom="@+id/viewMinute"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/textView2"
         android:text="@string/zero"
         android:textSize="30sp" />
 </RelativeLayout>
