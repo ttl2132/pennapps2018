@@ -17,25 +17,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SuccessActivity" android:label="Success">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
-        <activity android:name=".PhocusMain" android:label="PhocusMain">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
-<<<<<<< HEAD
-=======
 
-        <activity android:name=".SuccessActivity"></activity>
-        <activity android:name=".PhocusMain"></activity>
-        <activity android:name=".ShameActivity"></activity>
->>>>>>> 74dbb5f64173ee6172c8194da834a2488ebb7dc0
+        <activity android:label="Success" android:name=".SuccessActivity" android:taskAffinity="com.example.SuccessActivity" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>
