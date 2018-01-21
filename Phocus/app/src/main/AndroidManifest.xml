@@ -14,21 +14,18 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:label="Success" android:name=".SuccessActivity" android:taskAffinity="com.example.SuccessActivity" >
+
             <intent-filter>
-                <action android:name=".Success"/>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
-
-        <activity android:name=".PhocusMain"></activity>
-        <activity android:name=".ShameActivity"></activity>
     </application>
 
 </manifest>
