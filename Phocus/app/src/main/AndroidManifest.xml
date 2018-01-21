@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.yefrigaitan.phocus">
-
+    
+    <uses-permission android:name="SYSTEM_ALERT_WINDOW"></uses-permission>
+    
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -27,6 +29,13 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+<<<<<<< HEAD
+=======
+
+        <activity android:name=".SuccessActivity"></activity>
+        <activity android:name=".PhocusMain"></activity>
+        <activity android:name=".ShameActivity"></activity>
+>>>>>>> 74dbb5f64173ee6172c8194da834a2488ebb7dc0
     </application>
 
 </manifest>
