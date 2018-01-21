@@ -23,6 +23,7 @@ public class PhocusMain extends AppCompatActivity {
     private CountDownTimer mCountDownTimer;
     private boolean running = true;
     private long timeLeftMS;
+    private int updatedTimeLeft;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,17 +71,21 @@ public class PhocusMain extends AppCompatActivity {
     }
 
     private void updateCountdownText () {
-        int tempTimeLeft = (int) timeLeftMS;
-        int hours = tempTimeLeft / 3600000;
-        tempTimeLeft-= 3600000*hours;
-        int minutes = tempTimeLeft/ 60000;
-        tempTimeLeft -= 60000*minutes;
-        int seconds = tempTimeLeft/1000;
-
+        updatedTimeLeft = (int) timeLeftMS;
+        if (updatedTimeLeft==0) {
+            testingToSuccess();
+        }
+        int hours = updatedTimeLeft / 3600000;
+        updatedTimeLeft-= 3600000*hours;
+        int minutes = updatedTimeLeft/ 60000;
+        updatedTimeLeft -= 60000*minutes;
+        int seconds = updatedTimeLeft/1000;
         String timeLeftFormatted = String.format(Locale.getDefault(),"%02d:%02d:%02d",hours,minutes,seconds);
-        mTextViewCountdown.setText(timeLeftFormatted);
+        mTextViewCountdown.setText(updatedTimeLeft);
     }
-    public void testingToSuccess(View v){
+
+
+    public void testingToSuccess(){
         Intent intent2 = new Intent (this,SuccessActivity.class);
         startActivity(intent2);
     }
