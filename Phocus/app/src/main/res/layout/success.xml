@@ -16,9 +16,9 @@
         android:id="@+id/back_botton"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:background="@android:drawable/ic_menu_revert"
         android:onClick="goToHome"
         android:textSize="24sp" />
@@ -27,18 +27,18 @@
         android:id="@+id/share"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
         android:background="@android:drawable/ic_menu_share" />
 
     <TextView
         android:id="@+id/Success"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/back_botton"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="59dp"
         android:text="@string/success"
         android:textColor="@color/SuccessText"
         android:textSize="80sp" />
@@ -47,12 +47,12 @@
         android:id="@+id/diamond"
         android:layout_width="70dp"
         android:layout_height="70dp"
+        android:layout_alignLeft="@+id/Success"
+        android:layout_alignStart="@+id/Success"
         android:layout_below="@+id/Success"
-        android:layout_marginLeft="60dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="47dp"
-        android:layout_toEndOf="@+id/back_botton"
-        android:layout_toRightOf="@+id/back_botton"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="54dp"
         app:srcCompat="@drawable/streakicon" />
 
     <TextView
@@ -60,10 +60,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/diamond"
+        android:layout_alignEnd="@+id/Success"
+        android:layout_alignRight="@+id/Success"
         android:layout_toEndOf="@+id/diamond"
         android:layout_toRightOf="@+id/diamond"
         android:text="0"
+        android:textAlignment="center"
         android:textColor="@android:color/background_dark"
-        android:textSize="65sp" />
+        android:textSize="60sp" />
 
 </RelativeLayout>
