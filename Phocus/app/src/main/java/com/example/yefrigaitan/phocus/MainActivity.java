@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Button;
+import android.content.Context;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private static TextView showHour;
     private static TextView showMinute;
     public static int time;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
