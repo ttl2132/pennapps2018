@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
     private static SeekBar minuteBar;
     private static TextView showHour;
     private static TextView showMinute;
-    public static int time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                         showHour.setText(" " + progress);
-                        time += progress * 60;
+                        hour = progress;
+                        Log.d("hour","hour: " + hour);
                     }
 
                     public void onStartTrackingTouch(SeekBar seekBar) {
@@ -56,8 +56,9 @@ public class MainActivity extends AppCompatActivity {
                 new SeekBar.OnSeekBarChangeListener() {
                     @Override
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                        time += progress;
+                        minute = progress;
                         showMinute.setText(" " + progress);
+                        minute = progress;
                     }
 
                     public void onStartTrackingTouch(SeekBar seekBar) {
@@ -72,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void startMain(View v) {
-        Intent intent = new Intent(this, SuccessActivity.class);
+        Intent intent = new Intent(this, PhocusMain.class);
         startActivity(intent);
     }
 }
