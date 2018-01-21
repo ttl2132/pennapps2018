@@ -2306,6 +2306,7 @@
     <breakpoint-manager />
     <watches-manager />
   </component>
+
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_main.xml">
       <provider editor-type-id="android-designer2">
