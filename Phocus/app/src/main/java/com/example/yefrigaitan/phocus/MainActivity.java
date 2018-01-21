@@ -7,10 +7,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static int minute,hour;
+    public static int minute, hour;
 
     private static SeekBar hourBar;
     private static SeekBar minuteBar;
@@ -25,16 +26,13 @@ public class MainActivity extends AppCompatActivity {
         setSeekBar();
     }
 
-
-
     public void setSeekBar() {
-        hourBar = (SeekBar)findViewById(R.id.seekBarHour);
-        minuteBar = (SeekBar) findViewById(R.id.seekBarMinute) ;
-        showHour = (TextView)findViewById(R.id.showTextHours);
-        showMinute = (TextView)findViewById(R.id.showTextMinutes);
+        hourBar = (SeekBar) findViewById(R.id.seekBarHour);
+        minuteBar = (SeekBar) findViewById(R.id.seekBarMinute);
+        showHour = (TextView) findViewById(R.id.showTextHours);
+        showMinute = (TextView) findViewById(R.id.showTextMinutes);
         hourBar.setMax(8); // set max hours to 8
         minuteBar.setMax(59); // set max minutes to 59
-
 
 
         hourBar.setOnSeekBarChangeListener(
@@ -48,10 +46,9 @@ public class MainActivity extends AppCompatActivity {
                     public void onStartTrackingTouch(SeekBar seekBar) {
                     }
 
+
                     public void onStopTrackingTouch(SeekBar seekBar) {
-
                     }
-
                 }
         );
 
@@ -64,9 +61,11 @@ public class MainActivity extends AppCompatActivity {
                         showMinute.setText(" " + progress);
                     }
 
-                    public void onStartTrackingTouch(SeekBar seekBar) {}
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+                    }
 
-                    public void onStopTrackingTouch(SeekBar seekBar) {}
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+                    }
                 }
         );
 
@@ -79,6 +78,4 @@ public class MainActivity extends AppCompatActivity {
 
         startActivity(intent);
     }
-
 }
-
