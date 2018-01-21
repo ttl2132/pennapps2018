@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Button;
+import android.content.Context;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private static SeekBar minuteBar;
     private static TextView showHour;
     private static TextView showMinute;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
                     public void onStartTrackingTouch(SeekBar seekBar) {
                     }
+
 
                     public void onStopTrackingTouch(SeekBar seekBar) {
                     }

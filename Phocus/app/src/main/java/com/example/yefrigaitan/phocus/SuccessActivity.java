@@ -5,6 +5,7 @@ package com.example.yefrigaitan.phocus;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,12 +13,10 @@ import android.view.View;
 import android.content.Intent;
 import android.widget.TextView;
 import android.widget.Button;
-
 import com.facebook.CallbackManager;
 import com.facebook.share.widget.ShareDialog;
-
 import java.util.prefs.PreferenceChangeEvent;
-
+import org.w3c.dom.Text;
 
 /**
  * Created by jackshi on 1/20/18.
@@ -31,6 +30,7 @@ public class SuccessActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.success);
         setStreak();
@@ -79,5 +79,4 @@ public class SuccessActivity extends AppCompatActivity {
         streakText.setText("" + put);
 
     }
-
 }

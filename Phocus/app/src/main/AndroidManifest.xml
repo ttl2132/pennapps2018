@@ -3,6 +3,9 @@
     package="com.example.yefrigaitan.phocus">
     <uses-permission android:name="android.permission.INTERNET"/>
 
+    
+    <uses-permission android:name="SYSTEM_ALERT_WINDOW"></uses-permission>
+    
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -22,13 +25,18 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SuccessActivity"></activity>
-        <activity android:name=".PhocusMain"></activity>
-        <activity android:name=".ShameActivity"></activity>
+
+        <activity android:label="Success" android:name=".SuccessActivity" android:taskAffinity="com.example.SuccessActivity" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

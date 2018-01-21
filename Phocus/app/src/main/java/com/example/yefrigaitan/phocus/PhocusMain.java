@@ -74,11 +74,6 @@ public class PhocusMain extends AppCompatActivity {
         });
     }
 
-    public void testingToSuccess(View v){
-        Intent intent2 = new Intent (this,SuccessActivity.class);
-        startActivity(intent2);
-    }
-
     private void startTimer() {
         mCountDownTimer = new CountDownTimer(timeLeftMS, 1000) {
             @Override
@@ -117,8 +112,23 @@ public class PhocusMain extends AppCompatActivity {
         int minutes = updatedTimeLeft / 60000;
         updatedTimeLeft -= 60000 * minutes;
         int seconds = updatedTimeLeft / 1000;
+        updatedTimeLeft = (int) timeLeftMS;
+        if (updatedTimeLeft==0) {
+            testingToSuccess();
+        }
+        int hours = updatedTimeLeft / 3600000;
+        updatedTimeLeft-= 3600000*hours;
+        int minutes = updatedTimeLeft/ 60000;
+        updatedTimeLeft -= 60000*minutes;
+        int seconds = updatedTimeLeft/1000;
+
         String timeLeftFormatted = String.format(Locale.getDefault(),"%02d:%02d:%02d",hours,minutes,seconds);
-        mTextViewCountdown.setText(timeLeftFormatted);
+        mTextViewCountdown.setText(updatedTimeLeft);
     }
 
+
+    public void testingToSuccess(){
+        Intent intent2 = new Intent (this,SuccessActivity.class);
+        startActivity(intent2);
+    }
 }
