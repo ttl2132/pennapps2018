@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onStartTrackingTouch(SeekBar seekBar) {
                     }
 
+
                     public void onStopTrackingTouch(SeekBar seekBar) {
                     }
                 }
@@ -71,8 +72,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void startMain(View v) {
-        Intent intent = new Intent(this, SuccessActivity.class);
+
+    public void goToHome (View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+
         startActivity(intent);
     }
 }
