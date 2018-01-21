@@ -11,7 +11,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static int minute,hour;
+    public static int minute, hour;
 
     private static SeekBar hourBar;
     private static SeekBar minuteBar;
@@ -23,30 +23,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.phocus_setup);
-    }
-
-    public void startMain (View v){
-        Intent intent = new Intent (this, SuccessActivity.class);
-        startActivity(intent);
-    }
-
         setSeekBar();
     }
 
-        // hour seekbar
-        SeekBar seekBarHour = (SeekBar) findViewById(R.id.seekBarHour);
-        seekBarHour.setMax(8); // 8 is maximum value for the Seek Bar
-        seekBarHour.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            hour = 0;
-
     public void setSeekBar() {
-        hourBar = (SeekBar)findViewById(R.id.seekBarHour);
-        minuteBar = (SeekBar) findViewById(R.id.seekBarMinute) ;
-        showHour = (TextView)findViewById(R.id.showTextHours);
-        showMinute = (TextView)findViewById(R.id.showTextMinutes);
+        hourBar = (SeekBar) findViewById(R.id.seekBarHour);
+        minuteBar = (SeekBar) findViewById(R.id.seekBarMinute);
+        showHour = (TextView) findViewById(R.id.showTextHours);
+        showMinute = (TextView) findViewById(R.id.showTextMinutes);
         hourBar.setMax(8); // set max hours to 8
         minuteBar.setMax(59); // set max minutes to 59
-
 
 
         hourBar.setOnSeekBarChangeListener(
@@ -60,16 +46,10 @@ public class MainActivity extends AppCompatActivity {
                     public void onStartTrackingTouch(SeekBar seekBar) {
                     }
 
-
-        //minute seekbar
-        SeekBar seekBarMinute = (SeekBar) findViewById(R.id.seekBarMinute);
-        seekBarHour.setMax(60); // 60 is maximum value for the Seek Bar
-        seekBarHour.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            minute = 0;
-
-                    public void onStopTrackingTouch(SeekBar seekBar) {}
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+                    }
                 }
-                    );
+        );
 
 
         minuteBar.setOnSeekBarChangeListener(
@@ -80,25 +60,19 @@ public class MainActivity extends AppCompatActivity {
                         showMinute.setText(" " + progress);
                     }
 
-                    public void onStartTrackingTouch(SeekBar seekBar) {}
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+                    }
 
-                    public void onStopTrackingTouch(SeekBar seekBar) {}
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+                    }
                 }
         );
 
     }
 
 
-
-
-    public void goToHome (View view){
-        Intent intent = new Intent(this,MainActivity.class);
-
-    public void goToHome (View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-
+    public void startMain(View v) {
+        Intent intent = new Intent(this, SuccessActivity.class);
         startActivity(intent);
     }
-
 }
-
