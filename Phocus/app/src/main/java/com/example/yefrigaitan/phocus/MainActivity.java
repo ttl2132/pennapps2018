@@ -25,11 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setSeekBar();
     }
 
-        // hour seekbar
-        SeekBar seekBarHour = (SeekBar) findViewById(R.id.seekBarHour);
-        seekBarHour.setMax(8); // 8 is maximum value for the Seek Bar
-        seekBarHour.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            hour = 0;
+
 
     public void setSeekBar() {
         hourBar = (SeekBar)findViewById(R.id.seekBarHour);
@@ -49,16 +45,13 @@ public class MainActivity extends AppCompatActivity {
                         time += progress * 60;
                     }
 
-                    public void onStartTrackingTouch(SeekBar seekBar) {}
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+                    }
 
+                    public void onStopTrackingTouch(SeekBar seekBar) {
 
-        //minute seekbar
-        SeekBar seekBarMinute = (SeekBar) findViewById(R.id.seekBarMinute);
-        seekBarHour.setMax(60); // 60 is maximum value for the Seek Bar
-        seekBarHour.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            minute = 0;
+                    }
 
-                    public void onStopTrackingTouch(SeekBar seekBar) {}
                 }
         );
 
@@ -80,10 +73,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-
-    public void goToHome (View view){
-        Intent intent = new Intent(this,MainActivity.class);
 
     public void goToHome (View view) {
         Intent intent = new Intent(this, MainActivity.class);
