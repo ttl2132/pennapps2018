@@ -27,6 +27,7 @@ public class PhocusMain extends AppCompatActivity {
     private boolean running = true;
     private long timeLeftMS;
     private int updatedTimeLeft;
+    public static boolean emergency = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +64,7 @@ public class PhocusMain extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent2 = new Intent (PhocusMain.this,ShameActivity.class);
                         startActivity(intent2);
+                        emergency = true;
                     }
                 });
 
@@ -78,6 +80,8 @@ public class PhocusMain extends AppCompatActivity {
             public void onTick(long msLeft) {
                 timeLeftMS = msLeft;
                 updateCountdownText();
+
+
             }
 
             @Override
@@ -96,6 +100,18 @@ public class PhocusMain extends AppCompatActivity {
     }
 
     private void updateCountdownText () {
+
+        int updatedTimeLeft = (int) timeLeftMS;
+        if(updatedTimeLeft<=1000){
+            pauseTimer();
+            Intent intent2 = new Intent (PhocusMain.this,SuccessActivity.class);
+            startActivity(intent2);
+        }
+        int hours = updatedTimeLeft / 3600000;
+        updatedTimeLeft -= 3600000 * hours;
+        int minutes = updatedTimeLeft / 60000;
+        updatedTimeLeft -= 60000 * minutes;
+        int seconds = updatedTimeLeft / 1000;
         updatedTimeLeft = (int) timeLeftMS;
         if (updatedTimeLeft==0) {
             testingToSuccess();
@@ -105,6 +121,7 @@ public class PhocusMain extends AppCompatActivity {
         int minutes = updatedTimeLeft/ 60000;
         updatedTimeLeft -= 60000*minutes;
         int seconds = updatedTimeLeft/1000;
+
         String timeLeftFormatted = String.format(Locale.getDefault(),"%02d:%02d:%02d",hours,minutes,seconds);
         mTextViewCountdown.setText(updatedTimeLeft);
     }
